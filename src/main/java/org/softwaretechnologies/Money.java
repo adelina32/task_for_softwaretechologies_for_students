@@ -26,18 +26,28 @@ public class Money {
     @Override
     public boolean equals(Object o) {
 
-        if (o == this){
+        // Проверяем, ссылается ли объект 'o' на тот же экземпляр, что и текущий объект (this).
+        if (o == this) {
             return true;
         }
-        if (o == null || getClass()!=o.getClass()){
+
+        // Если 'o' равен null, или 'o' не является экземпляром того же класса, что и текущий объект,
+        // возвращаем false, так как такие объекты не равны.
+
+        if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        // Приводим 'o' к типу Money для дальнейшей работы
+
+        // Приводим объект 'o' к типу Money для дальнейшего сравнения.
+        // Мы уверены, что 'o' не null и является экземпляром класса Money на предыдущих шагах.
         Money otherMoney = (Money) o;
 
-        if (type != otherMoney.type){
+        // Сравниваем поле 'type' текущего объекта с полем 'type' объекта otherMoney.
+        // Если они не равны, возвращаем false, так как два объекта (money) не равны.
+        if (type != otherMoney.type) {
             return false;
         }
+
         // Устанавливаем масштаб (количество знаков после запятой) для текущего объекта
         // Используем RoundingMode.HALF_UP для округления
         BigDecimal thisAmount;

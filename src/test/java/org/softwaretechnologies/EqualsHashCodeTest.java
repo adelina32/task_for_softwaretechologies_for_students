@@ -101,15 +101,6 @@ public class EqualsHashCodeTest {
          * assertFalse(a);
          */
 
-//        // TODO: Встатьте нужные выражения assertTrue или assertFalse для переменных a b c d e чтобы тест проходил
-//        // ↓↓↓↓ КОД ДЛЯ ЗАМЕНЫ ↓↓↓↓
-//        assertTrue(e);
-//        assertTrue(b);
-//        assertTrue(c);
-//        assertFalse(d);
-//        assertFalse(e);
-//        // ↑↑↑↑ КОД ДЛЯ ЗАМЕНЫ ↑↑↑↑
-
         assertTrue(a); // A неверно реализован
         assertFalse(b); // B неверно реализован
         assertFalse(c);  // C правильно реализован

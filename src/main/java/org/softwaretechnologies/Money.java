@@ -121,4 +121,32 @@ public class Money {
         // Возвращаем сумму amountValue и typeId.
         return amountValue + typeId;
     }
+    @Override
+    public String toString() {
+        String typeString = "null";
+        String num = "null";
+        if (this.amount != null) {
+            num = this.amount.setScale(4, RoundingMode.HALF_UP).toString();
+        }
+        if (this.type != null) {
+            typeString = this.type.toString();
+        }
+        return typeString + ": " + num;
+    }
+
+    public BigDecimal getAmount() {
+        return amount;
+    }
+
+    public MoneyType getType() {
+        return type;
+    }
+
+    public static void main(String[] args) {
+        Money money = new Money(MoneyType.EURO, BigDecimal.valueOf(10.00012));
+        Money money1 = new Money(MoneyType.USD, BigDecimal.valueOf(10.5000));
+        System.out.println(money1.toString());
+        System.out.println(money1.hashCode());
+        System.out.println(money.equals(money1));
+    }
 }

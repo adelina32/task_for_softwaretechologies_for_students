@@ -14,7 +14,6 @@ public class Company {
         this.name = name;
         this.employeeList = new ArrayList<>();
     }
-
     /**
      * Создает и добавляет сотрудника в коллекцию employeeList.
      * @param name имя работника
@@ -24,6 +23,7 @@ public class Company {
     public void addEmployee(String name, int baseSalary, EmployeeType type) {
         // TODO: реализуйте вышеуказанную функцию
 
+        employeeList.add(EmployeeFactory.createEmployee(name, baseSalary,type));
     }
 
     /**
@@ -33,8 +33,12 @@ public class Company {
      */
     public int getMonthSalary(int month) {
         // TODO: реализуйте вышеуказанную функцию
-
-        return 0;
+        int sum = 0;
+        for (int i = 0; i < employeeList.size(); i++) {
+            Employee e = employeeList.get(i); //методом get(i) получаем элемент списка типа Employee(Manager, Programmer, Tester)
+            sum += e.getMonthSalary(month);
+        }
+        return sum;
     }
 
     public String getName() {

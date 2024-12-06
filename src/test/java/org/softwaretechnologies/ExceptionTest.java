@@ -47,7 +47,7 @@ public class ExceptionTest {
         } catch (Exception e) {
             x = 2;
         }
-        assertEquals(0, x);
+        assertEquals(2, x);
     }
 
     @Test

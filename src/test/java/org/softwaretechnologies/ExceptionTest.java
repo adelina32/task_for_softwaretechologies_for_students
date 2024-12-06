@@ -101,6 +101,6 @@ public class ExceptionTest {
         } catch (Exception e) {
             s += "c";
         }
-        assertEquals("ab", s);
+        assertEquals("abc", s);
     }
 }

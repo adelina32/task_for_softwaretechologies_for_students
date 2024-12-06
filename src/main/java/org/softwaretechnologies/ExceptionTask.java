@@ -25,7 +25,7 @@ public class ExceptionTask {
      Вызвана функция printMessage2
      */
     public static void printMessage2() throws Exception {
-        // throwCatchableException(); // проверяемое исключение
+        //throwCatchableException(); // проверяемое исключение
         // TODO: реализуйте вышеуказанную функцию
         try {
             throwCatchableException();
